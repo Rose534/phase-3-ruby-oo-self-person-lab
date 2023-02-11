@@ -1,3 +1,5 @@
+require 'pry'
+
 class Person
   attr_reader :name, :bank_account, :happiness, :hygiene
   
@@ -49,9 +51,9 @@ class Person
 end
   
  def work_out
-self.happiness = [@happiness + 2, 10].min
-@hygiene -= 3
-"♪ another one bites the dust ♫"
+  self.happiness = [@happiness + 2, 10].min
+  self.hygiene = @hygiene - 3
+  "♪ another one bites the dust ♫"
 end
   
  def call_friend(friend)
@@ -74,5 +76,7 @@ else
 end
 end
 
-
 end
+ 
+person = Person.new("John")
+puts person.take_bath
